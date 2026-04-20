@@ -42,3 +42,5 @@ export default (sequelize, DataTypes) => {
 
     return Category;
 };
+
+//export { default as Category } from './category.js';

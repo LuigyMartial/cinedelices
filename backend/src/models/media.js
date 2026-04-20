@@ -53,3 +53,5 @@ export default (sequelize, DataTypes) => {
 
     return Media;
 };
+
+//export { default as Media } from './media.js';

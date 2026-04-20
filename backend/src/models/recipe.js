@@ -122,3 +122,5 @@ export default (sequelize, DataTypes) => {
 
     return Recipe;
 };
+
+//export { default as Recipe } from './recipe.js';
