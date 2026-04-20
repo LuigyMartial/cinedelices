@@ -1,0 +1,13 @@
+@baseUrl = http://localhost:3000
+
+### get all categories
+GET {{baseUrl}}/categories
+
+### create a new category
+POST {{baseUrl}}/categories
+Content-Type: application/json
+
+{
+    "name": "Action",
+    "description": "Films with a lot of action and excitement."
+}
