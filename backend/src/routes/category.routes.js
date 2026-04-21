@@ -1,5 +1,5 @@
 import express from 'express';
-import { getAll, create, getById, deleteById } from '../controllers/category.controller.js';
+import { getAll, create, getById, deleteById, update } from '../controllers/category.controller.js';
 
 const router = express.Router();
 // Route qui permet de récupérer toutes les catégories
@@ -10,6 +10,8 @@ router.post('/', create);
 router.get('/:id', getById);
 // Route qui permet de supprimer une catégorie par son id
 router.delete('/:id', deleteById);
+// Route qui permet de mettre à jour une catégorie par son id
+router.patch('/:id', update);
 
 
 export default router;

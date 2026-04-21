@@ -59,3 +59,24 @@ export async function deleteById(req, res){
     }
 }
 
+export async function update(req, res){
+    //res.send("Update a category by id");
+    try {
+        const id = req.params.id;
+        const [updatedCount, updatedCategory] = await Category.update(req.body, {
+            where: { id: id }
+        })
+
+        //console.log(updatedCategory);
+
+        if(updatedCount === 0){
+            return res.status(404).json({errror: "Category not found"});
+        }
+        res.status(200).json(updatedCategory);
+
+
+    } catch(error){
+        res.status(500).json(error);
+    }
+}
+

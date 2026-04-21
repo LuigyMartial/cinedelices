@@ -17,3 +17,12 @@ GET {{baseUrl}}/categories/56
 
 ### delete a category by id
 DELETE {{baseUrl}}/categories/55
+
+### update a category by id
+PATCH {{baseUrl}}/categories/50
+Content-Type: application/json
+
+{
+    "name": "Comédie",
+    "description": "Films qui font rire."
+}
