@@ -14,3 +14,6 @@ Content-Type: application/json
 
 ### get a category by id
 GET {{baseUrl}}/categories/56
+
+### delete a category by id
+DELETE {{baseUrl}}/categories/55

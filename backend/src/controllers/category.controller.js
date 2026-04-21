@@ -40,3 +40,22 @@ export async function getById(req, res){
     }
 }
 
+export async function deleteById(req, res){
+    //res.send("Delete a category by id");
+    try {
+        const id = req.params.id;
+        const deletedCount = await Category.destroy({
+            where: { id: id }
+        })
+
+        if(deletedCount === 0){
+            return res.status(404).json({error: "Category not found"});
+        }
+
+        res.status(204).end();
+
+    } catch(error){
+        res.status(500).json(error);
+    }
+}
+
