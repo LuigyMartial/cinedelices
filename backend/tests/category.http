@@ -11,3 +11,6 @@ Content-Type: application/json
     "name": "Action",
     "description": "Films with a lot of action and excitement."
 }
+
+### get a category by id
+GET {{baseUrl}}/categories/56
