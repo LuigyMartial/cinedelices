@@ -13,10 +13,10 @@ Content-Type: application/json
 }
 
 ### get a category by id
-GET {{baseUrl}}/categories/56
+GET {{baseUrl}}/categories/kmlkm
 
 ### delete a category by id
-DELETE {{baseUrl}}/categories/55
+DELETE {{baseUrl}}/categories/56
 
 ### update a category by id
 PATCH {{baseUrl}}/categories/50
