@@ -1,0 +1,28 @@
+@baseUrl = http://localhost:3000
+
+### get all categories
+GET {{baseUrl}}/categories
+
+### create a new category
+POST {{baseUrl}}/categories
+Content-Type: application/json
+
+{
+    "name": "Action",
+    "description": "Films with a lot of action and excitement."
+}
+
+### get a category by id
+GET {{baseUrl}}/categories/lmlkm
+
+### delete a category by id
+DELETE {{baseUrl}}/categories/56
+
+### update a category by id
+PATCH {{baseUrl}}/categories/50
+Content-Type: application/json
+
+{
+    "name": "Comédie",
+    "description": "Films qui font rire."
+}
