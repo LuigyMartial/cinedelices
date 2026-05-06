@@ -1,3 +1,10 @@
+### Marque page
+
+- docs 
+    - jour03- mercredi - validation et erreurs -> part4- correction challenge
+- vidéos    
+    - semaine06- Saison B06 - API REST -> E03-mercredi - validation et erreurs -> 2-aprem
+
 ### processus
 
 1. sur gestion_de_projet pour chaque modéle -> crée les différents branches intermédiaires
