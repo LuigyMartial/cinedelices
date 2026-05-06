@@ -5,78 +5,55 @@ const { Category } = db;
 
 export async function getAll(req, res){
    // res.send("Get all categories");
-    try {
-        const categories = await Category.findAll();
-        //console.log(categories);
-        res.status(200).json(categories);
-    } catch(error){
-        res.status(500).json(error);
-    }
+   const categories = await Category.findAll();
+   //console.log(categories);
+   res.status(200).json(categories);
 }
 
 export async function create(req, res){
     //res.send("Create a new category");
-    try {
-        const category = await Category.create(req.body);
-        res.status(201).json(category);
-    } catch(error){
-        res.status(500).json(error);
-    }
+    const category = await Category.create(req.body);
+    res.status(201).json(category);
 }
 
 export async function getById(req, res){
     //res.send("Get a category by id");
-    try {
-        const id = req.params.id;
-        const category = await Category.findByPk(id);
+    const id = req.params.id;
+    const category = await Category.findByPk(id);
 
-        if(!category){
-            return res.status(404).json({error: "Category not found"});
-        }
-        res.status(200).json(category);
-
-    } catch(error){
-        res.status(500).json(errror);
+    if(!category){
+        return res.status(404).json({error: "Category not found"});
     }
+    res.status(200).json(category);
+
 }
 
 export async function deleteById(req, res){
     //res.send("Delete a category by id");
-    try {
-        const id = req.params.id;
-        const deletedCount = await Category.destroy({
-            where: { id: id }
-        })
+    const id = req.params.id;
+    const deletedCount = await Category.destroy({
+        where: { id: id }
+    })
 
-        if(deletedCount === 0){
-            return res.status(404).json({error: "Category not found"});
-        }
-
-        res.status(204).end();
-
-    } catch(error){
-        res.status(500).json(error);
+    if(deletedCount === 0){
+        return res.status(404).json({error: "Category not found"});
     }
+
+    res.status(204).end();
+
 }
 
 export async function update(req, res){
     //res.send("Update a category by id");
-    try {
-        const id = req.params.id;
-        const [updatedCount, updatedCategory] = await Category.update(req.body, {
-            where: { id: id }
-        })
-
-        //console.log(updatedCategory);
-
-        if(updatedCount === 0){
-            return res.status(404).json({errror: "Category not found"});
-        }
-        res.status(200).json(updatedCategory);
-
-
-    } catch(error){
-        res.status(500).json(error);
+    const id = req.params.id;
+    const [updatedCount, updatedCategory] = await Category.update(req.body, {
+        where: { id: id }
+    })
+    //console.log(updatedCategory);
+    if(updatedCount === 0){
+        return res.status(404).json({errror: "Category not found"});
     }
+    res.status(200).json(updatedCategory);
+
 }
 
